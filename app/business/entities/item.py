@@ -14,4 +14,3 @@ class Item(db.Model):
 
     def __repr__(self):
         return "id: {0} | name: {1} | type {2} |".format(self.id, self.name, self.type)
-

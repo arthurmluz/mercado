@@ -1,15 +1,14 @@
-from app import create_app
+from app import create_app, root_api, root_blueprint
+from flask import jsonify
 
 from app.business.servicos import ItemService, ItemEstoqueService, PrateleiraService, SetorService
 
 app = create_app()
 
-
-@app.route('/')
-def start():  # application's code here
-    a = ItemService.getAll()
-#    database.create({"name": "Balinhas", "type": "COMIDAS", "weight": 1, "volume": 1})
-    return "{0}".format(a[0].name)
+#@root_blueprint.route('/', methods=['GET'])
+#def get():  # application's code here
+#    res = ItemEstoqueService.getAll()
+#    return jsonify(res)
 
 
 if __name__ == '__main__':

@@ -12,7 +12,7 @@ class ItemEstoqueService(DBInterface):
 
     @staticmethod
     def getAll():
-        return db.session.query(ItemEstoque).all()
+        return db.session.query(ItemEstoque).order_by(ItemEstoque.id).all()
 
     @staticmethod
     def getById(target_id: int):
@@ -29,7 +29,7 @@ class ItemEstoqueService(DBInterface):
 
     @staticmethod
     def create(data: dict):
-        """Receives a table and a dictionary with data to create a new object to that table"""
+        """Receives a dictionary with data to create a new object to that table"""
         entity = ItemEstoque()
 
         columns = entity.__table__.columns._all_columns
@@ -41,6 +41,25 @@ class ItemEstoqueService(DBInterface):
         db.session.commit()
 
         return entity
+
+    @staticmethod
+    def update(data: dict):
+
+        item_id = data['id']
+
+        item_estoque = (
+            db.session.query(ItemEstoque)
+            .filter(
+                ItemEstoque.id == item_id
+            ).first()
+        )
+
+        item_estoque.quantity = data['quantity']
+
+        db.session.add(item_estoque)
+        db.session.commit()
+
+        return {}
 
     @staticmethod
     def delete(target_id: int):

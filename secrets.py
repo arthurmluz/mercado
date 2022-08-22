@@ -1,4 +1,4 @@
 dbhost = 'localhost'
-dbuser = '123'
-dbpass = 'arthur'
+dbpass = '123'
+dbuser = 'arthur'
 dbname = 'postgres'

@@ -1,13 +1,13 @@
+import secrets
 from app import create_app
-from app.business.database import get
+
 
 app = create_app()
 
-
-@app.route('/')
-def start():  # put application's code here
-    get()
-    return "tela inicial"
-
+""" Initialize the application """
 if __name__ == '__main__':
+    if secrets.dbuser == 'arthur':
+        print("\n>>> ALTERAR VALORES DE ACESSO AO BANCO DE DADOS NO SECRETS.PY <<<")
+        print(">>> Valores foram enviados junto ao email de entrega <<<")
+        exit(0)
     app.run()

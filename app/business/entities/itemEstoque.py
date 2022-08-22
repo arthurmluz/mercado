@@ -8,9 +8,10 @@ class ItemEstoque(db.Model):
     quantity = db.Column(db.Integer, nullable=False, default=0)
 
     item_id = db.Column(db.Integer, db.ForeignKey("item.id"), nullable=False)
+
     prateleira = db.Column(db.Integer, db.ForeignKey("prateleira.id"), nullable=False)
 
-    _item = db.relationship("Item", back_populates="estoque")
+    _item = db.relationship("Item", back_populates="estoque", lazy="joined")
     _prateleira = db.relationship("Prateleira", back_populates="itens")
 
     def __repr__(self):

@@ -1,5 +1,7 @@
 from werkzeug.exceptions import NotFound, BadRequest
 
+""" Contains exceptions to be raised when a problem occurs """
+
 
 class DatabaseEntityNotFound(Exception):
     """ 404, DataBase Entity Not Found Exception"""

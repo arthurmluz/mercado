@@ -6,9 +6,11 @@ from app.business.entities.setor import Setor
 
 
 class SetorService(DBInterface):
+    """ SetorService: methods related to accessing/modifying the database table 'setor' """
 
     @staticmethod
     def getAll():
+        """ returns all rows from table 'setor' """
         return db.session.query(Setor).all()
 
     @staticmethod

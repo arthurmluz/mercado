@@ -6,9 +6,11 @@ from app.business.entities.item import Item
 
 
 class ItemService(DBInterface):
+    """ ItemService: methods related to accessing/modifying the database table 'item' """
 
     @staticmethod
     def getAll():
+        """ returns all rows from table 'item' """
         return db.session.query(Item).all()
 
     @staticmethod

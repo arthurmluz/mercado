@@ -6,9 +6,11 @@ from app.business.entities.prateleira import Prateleira
 
 
 class PrateleiraService(DBInterface):
+    """ PrateleiraService: methods related to accessing/modifying the database table 'prateleira' """
 
     @staticmethod
     def getAll():
+        """ returns all rows from table 'prateleira' """
         return db.session.query(Prateleira).all()
 
     @staticmethod

@@ -2,9 +2,11 @@ from abc import ABC, abstractmethod
 from app.business.exceptions import APIBadRequest
 
 
-# Database Interface
-# Contains methods to be used on future databases
 class DBInterface(ABC):
+    """
+        database interface, to be implemented by database services
+        contains abstract methods
+    """
 
     @staticmethod
     def _validateFields(entity, columns, data: dict):

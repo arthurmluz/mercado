@@ -9,9 +9,11 @@ from app.business.entities.setor import Setor
 
 
 class ItemEstoqueService(DBInterface):
+    """ ItemEstoqueService: methods related to accessing/modifying the database table 'itemEstoque' """
 
     @staticmethod
     def getAll():
+        """ returns all rows from table 'item' """
         return db.session.query(ItemEstoque).order_by(ItemEstoque.id).all()
 
     @staticmethod

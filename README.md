@@ -31,12 +31,3 @@ exemplo 'padaria' e retorna a lista de prateleiras naquele setor, e dentro de ca
 - Feature 6: Consulta de itens por prateleira
 - foi criado um endpoint GET `/estoque/prateleira/<prateleira_id>` que recebe um id de prateleira (existem de 1-7)
 e retorna as informações da prateleira e todos os itens nela presentes;
-
-  
-#### Observações:
-- Não foi possível implementar frontend;
-- Features 8-11 (opcionais) não foram realizadas;
-- Script de criação e inserção de itens do banco de dados utilizado está na pasta utils;
-- Nunca havia criado uma API desde o começo em flask, apenas feito adições a APIs já existentes, 
-nas quais namespace e blueprints já estavam configuradas;
-- Gostaria de ter tido mais tempo para dedicar ao desenvolvimento;
